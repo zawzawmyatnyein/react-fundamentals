@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Fundamentals</title>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script type="module">
+        // const rootElement = document.createElement('div')
+        // rootElement.setAttribute('id', 'root')
+        // document.body.append(rootElement)
+        // const element = document.createElement('div')
+        // element.textContent = 'Hello World'
+        // element.className = 'container'
+        // rootElement.append(element)
+
+        const rootElement = document.getElementById('root')
+        const element = React.createElement('div', {
+            className: 'container',
+            // children: 'Hello World'
+            children: [
+                React.createElement('span', null, 'Hello'),
+                ' ',
+                React.createElement('span', null, 'World')
+            ]
+        })
+        ReactDOM.createRoot(rootElement).render(element)
+    </script>
+</body>
+</html>

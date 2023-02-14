@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>React Fundamentals</title>
+</head>
+<body>
+    <!-- Creating Custom Components  -->
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+    <script type="text/babel">
+        // NOTE: this is not being used as a react component. Just normal javascipt function
+        // function message({children}) {
+        //     return <div className="message">{children}</div>
+        // }
+
+        // This is being used as a compoent
+        function Message({children}) {
+            return <div className="message">{children}</div>
+        }
+
+        // const element = (
+        //     <div className="container">
+        //         {message({children: 'Hello World'})}
+        //         {message({children: 'Goodbye World'})}
+        //     </div>
+        // )
+
+        // const element = (
+        //     <div className="container">
+        //         {React.createElement(message, {children: 'Hello World'})}
+        //         {React.createElement(message, {children: 'Goodbye World'})}
+        //     </div>
+        // )
+
+        const element = (
+            <div className="container">
+                <Message>Hello World</Message>
+                <Message>Goodbye World</Message>
+            </div>
+        )
+
+        ReactDOM.createRoot(document.getElementById('root')).render(element)
+    </script>
+</body>
+</html>
